@@ -1,4 +1,4 @@
-﻿using System;
+﻿                                                                                                                                                                                                                                                                                                                                                                                                                                      using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +8,22 @@ namespace ConsoleApp1
 {
     class Program
     {
-      static void Main()
+        static void Main()
         {
-            Console.WriteLine("ingrese X1");
-            double x1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese Y1");
-            double y1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese X2");
-            double x2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("ingrese Y2");
-            double y2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("escriba b0");
+            double b0 = double.Parse(Console.ReadLine());
+            Console.WriteLine("escriba b1");
+            double b1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("escriba b2");
+            double b2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("escriba b3");
+            double b3 = double.Parse(Console.ReadLine());
+            Console.WriteLine("escriba b4");
+            double b4 = double.Parse(Console.ReadLine());
 
-            double pendiente = (y2 - y1) / (x2 - x1);
-            double intercepto = y1 - (pendiente * x1);
-            double distancia = Math.Sqrt(((y2 - y1) * (y2 - y1)) + ((x2 - x1) * (x2 - x1)));
+            double num = (b0 * Math.Pow(2, 0)) + (b1 * Math.Pow(2, 1)) + (b2 * Math.Pow(2, 2)) + (b3 * Math.Pow(2, 3)) + (b4 * Math.Pow(2, 4));
 
-            Console.WriteLine("La pendiente es:" + pendiente + "Y el intercepto es" + intercepto);
-            Console.WriteLine("La distancia es:" + distancia);
+            Console.WriteLine("El número ingresado es:" + num);
         }
     }
 }
