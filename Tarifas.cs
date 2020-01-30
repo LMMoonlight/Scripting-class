@@ -14,7 +14,6 @@ namespace Tarifas
             double s = double.Parse(Console.ReadLine());
 
             if (0 > s)
-
             {
                 Console.WriteLine("No es posible tener un salario mensual negativo, no sea mamón.");
             }
@@ -31,8 +30,6 @@ namespace Tarifas
             {
                 Console.WriteLine("Usted Tiene la tarifa C.");
             }
-
-
         }
     }
 }
