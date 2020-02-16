@@ -1,29 +1,57 @@
-﻿                                                                                                                                                                                                                                                                                                                                                                                                                                      using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Casa2
 {
     class Program
     {
         static void Main()
         {
-            Console.WriteLine("escriba b0");
-            double b0 = double.Parse(Console.ReadLine());
-            Console.WriteLine("escriba b1");
-            double b1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("escriba b2");
-            double b2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("escriba b3");
-            double b3 = double.Parse(Console.ReadLine());
-            Console.WriteLine("escriba b4");
-            double b4 = double.Parse(Console.ReadLine());
+            Random aleatorio = new Random();
+            int dado1 = 0, total = 0, contador = 0, conDoce = 0;
+            string continuar = "";
 
-            double num = (b0 * Math.Pow(2, 0)) + (b1 * Math.Pow(2, 1)) + (b2 * Math.Pow(2, 2)) + (b3 * Math.Pow(2, 3)) + (b4 * Math.Pow(2, 4));
+            Console.WriteLine("¿Desea lanzar los dados (s/n)?");
+            continuar = Console.ReadLine();
 
-            Console.WriteLine("El número ingresado es:" + num);
+            while (continuar == "s" && total < 100)
+            {
+                dado1 = aleatorio.Next(1, 13);
+                total += dado1;
+                contador++;
+                if (dado1 != 12) conDoce = 0; else conDoce++;
+
+                Console.WriteLine("El dado ha caido en: " + dado1);
+                Console.WriteLine("Su total es: " + total);
+                Console.WriteLine("contador es: " + contador);
+
+                if (conDoce > 1 && dado1 == 10)
+                {
+                    Console.WriteLine("ha ganado.");
+                    continuar = "n";
+                }
+                else if (contador > 3 && (dado1 % 2) != 0)
+                {
+                    Console.WriteLine("Ha salido un impar,pierdes");
+                    continuar = "n";
+                }
+                else if (total > 100)
+                {
+                    Console.WriteLine("Fin del juego.");
+                    continuar = "n";
+                }
+                else
+                {
+                    Console.WriteLine("¿Desea lanzar los dados (s/n)?");
+                    continuar = Console.ReadLine();
+                }
+            }
+
+            Console.WriteLine("Su total fue: " + total);
+            Console.WriteLine("Gracias por jugar.");
         }
     }
 }
